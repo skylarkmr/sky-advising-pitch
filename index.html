@@ -1,0 +1,2160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://formsubmit.co">
+
+    <meta name="description" content="Sky Advising - Premier Web3 advisory agency providing full-cycle support for blockchain projects. Expert tokenomics, fundraising, market making, and technical development services.">
+    <meta name="keywords" content="Web3, blockchain, crypto advisory, tokenomics, fundraising, market making, smart contract audit, DeFi, Web3 consulting, blockchain consulting">
+    <meta name="author" content="Sky Advising">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#00e5ff">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://skyadvising.com/">
+    <meta property="og:title" content="Sky Advising - Web3 Full Cycle Advising Agency">
+    <meta property="og:description" content="One place with all the answers for your crypto project. Expert Web3 advisory services from concept to launch.">
+    <meta property="og:image" content="https://skyadvising.com/og-image.jpg">
+    <meta property="og:site_name" content="Sky Advising">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://skyadvising.com/">
+    <meta property="twitter:title" content="Sky Advising - Web3 Full Cycle Advising Agency">
+    <meta property="twitter:description" content="One place with all the answers for your crypto project. Expert Web3 advisory services from concept to launch.">
+    <meta property="twitter:image" content="https://skyadvising.com/og-image.jpg">
+    <meta name="twitter:creator" content="@skyadvising">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90' fill='%2300e5ff'>S</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90' fill='%2300e5ff'>S</text></svg>">
+
+    <title>Sky Advising - Web3 Full Cycle Advising Agency | Blockchain Consulting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Sky Advising",
+      "description": "Web3 Full Cycle Advising Agency providing comprehensive blockchain consulting services",
+      "url": "https://skyadvising.com",
+      "logo": "https://skyadvising.com/logo.png",
+      "sameAs": [
+        "https://twitter.com/skyadvising",
+        "https://t.me/skyadvising"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "availableLanguage": ["English"]
+      },
+      "areaServed": "Worldwide",
+      "serviceType": [
+        "Blockchain Consulting",
+        "Tokenomics Design",
+        "Fundraising",
+        "Market Making",
+        "Smart Contract Audit",
+        "Technical Development"
+      ]
+    }
+    </script>
+
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+        :root {
+            --bg-primary: #080b1a;
+            --bg-secondary: #0d1129;
+            --bg-card: #111638;
+            --bg-card-hover: #161d4a;
+            --accent-cyan: #00e5ff;
+            --accent-gold: #ffd700;
+            --accent-magenta: #ff2d95;
+            --text-white: #eef0ff;
+            --text-dim: #7b82a8;
+            --text-muted: #4a5080;
+            --border-subtle: rgba(0, 229, 255, 0.08);
+            --border-hover: rgba(0, 229, 255, 0.25);
+            --glow-cyan: rgba(0, 229, 255, 0.4);
+            --glow-gold: rgba(255, 215, 0, 0.3);
+            --nav-height: 80px;
+        }
+
+        html {
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            scroll-padding-top: var(--nav-height);
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-white);
+            overflow-x: hidden;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,*::before,*::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        h1,h2,h3,h4,h5,h6 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+        }
+
+        /* ========== FOCUS VISIBLE (accessibility #15) ========== */
+        :focus-visible {
+            outline: 2px solid var(--accent-cyan);
+            outline-offset: 2px;
+        }
+        a:focus:not(:focus-visible),
+        button:focus:not(:focus-visible) {
+            outline: none;
+        }
+
+        /* ========== NOISE TEXTURE ========== */
+        /* #17: z-index lowered from 9999 to 10, pointer-events: none already set */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 10;
+            pointer-events: none;
+            opacity: 0.035;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 256px 256px;
+        }
+
+        /* ========== ANIMATED BG ========== */
+        .bg-canvas {
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            overflow: hidden;
+        }
+
+        .bg-mesh {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.15;
+        }
+
+        .bg-mesh--1 {
+            width: 800px; height: 800px;
+            background: radial-gradient(circle, var(--accent-cyan), transparent 70%);
+            top: -20%; left: -10%;
+            animation: meshFloat1 30s ease-in-out infinite alternate;
+        }
+        .bg-mesh--2 {
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, var(--accent-magenta), transparent 70%);
+            top: 40%; right: -15%;
+            animation: meshFloat2 35s ease-in-out infinite alternate;
+        }
+        .bg-mesh--3 {
+            width: 700px; height: 700px;
+            background: radial-gradient(circle, var(--accent-gold), transparent 70%);
+            bottom: -25%; left: 25%;
+            animation: meshFloat3 28s ease-in-out infinite alternate;
+        }
+
+        @keyframes meshFloat1 {
+            0% { transform: translate(0,0) scale(1); }
+            100% { transform: translate(150px, 100px) scale(1.2); }
+        }
+        @keyframes meshFloat2 {
+            0% { transform: translate(0,0) scale(1); }
+            100% { transform: translate(-120px, -80px) scale(1.15); }
+        }
+        @keyframes meshFloat3 {
+            0% { transform: translate(0,0) scale(1); }
+            100% { transform: translate(80px, -120px) scale(0.9); }
+        }
+
+        /* ========== GEOMETRIC GRID ========== */
+        .bg-grid {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background-image:
+                linear-gradient(rgba(0,229,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,229,255,0.03) 1px, transparent 1px);
+            background-size: 80px 80px;
+            mask-image: radial-gradient(ellipse at 50% 50%, black 30%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 30%, transparent 70%);
+        }
+
+        /* ========== NAVIGATION ========== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(8,11,26,0.7);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid var(--border-subtle);
+            transition: all 0.4s ease;
+        }
+
+        nav.scrolled {
+            padding: 0.8rem 5%;
+            background: rgba(8,11,26,0.92);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        .logo:hover { transform: translateY(-2px); }
+
+        .logo-mark {
+            width: 48px;
+            height: 48px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-mark svg {
+            width: 48px;
+            height: 48px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .logo-name {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--text-white);
+            letter-spacing: -0.02em;
+            line-height: 1;
+        }
+
+        .logo-tag {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.6rem;
+            font-weight: 600;
+            color: var(--accent-cyan);
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent-cyan);
+            background: rgba(0,229,255,0.06);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+            width: 20px;
+            height: 2px;
+            background: var(--accent-cyan);
+            border-radius: 2px;
+            transition: transform 0.3s ease;
+        }
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            transform: translateX(-50%) scaleX(1);
+        }
+
+        /* #9: Nav CTA - cleaned up !important declarations */
+        .nav-links li:last-child > a.nav-cta {
+            margin-left: 1rem;
+            padding: 0.6rem 1.6rem;
+            background: var(--accent-cyan);
+            color: var(--bg-primary);
+            font-weight: 700;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px var(--glow-cyan);
+        }
+        .nav-links li:last-child > a.nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 40px var(--glow-cyan);
+        }
+        .nav-links li:last-child > a.nav-cta::after { display: none; }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--accent-cyan);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        /* ========== HERO ========== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 5% 4rem;
+            position: relative;
+            overflow: visible;
+        }
+
+        .hero-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text { position: relative; z-index: 2; }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            background: rgba(0,229,255,0.06);
+            border: 1px solid rgba(0,229,255,0.15);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent-cyan);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            animation: fadeSlideUp 0.8s ease 0.2s both;
+        }
+
+        .hero-eyebrow::before {
+            content: '';
+            width: 6px; height: 6px;
+            background: var(--accent-cyan);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--accent-cyan);
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 6vw, 5.2rem);
+            font-weight: 800;
+            line-height: 1.1;
+            overflow: visible;
+            letter-spacing: -0.04em;
+            margin-bottom: 1.5rem;
+            animation: fadeSlideUp 0.8s ease 0.4s both;
+        }
+
+        .hero h1 .line-1 { display: block; color: var(--text-white); }
+        .hero h1 .line-2 {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            padding: 0 0.05em 0.1em 0;
+        }
+
+        .hero-sub {
+            font-size: 1.25rem;
+            color: var(--text-dim);
+            max-width: 520px;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+            animation: fadeSlideUp 0.8s ease 0.6s both;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: fadeSlideUp 0.8s ease 0.8s both;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 1rem 2.5rem;
+            background: var(--accent-cyan);
+            color: var(--bg-primary);
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 12px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 30px var(--glow-cyan);
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 50px var(--glow-cyan);
+        }
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent, rgba(255,255,255,0.2));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .btn-primary:hover::after { opacity: 1; }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 1rem 2.5rem;
+            background: transparent;
+            color: var(--text-white);
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 12px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-outline:hover {
+            border-color: var(--accent-cyan);
+            color: var(--accent-cyan);
+            background: rgba(0,229,255,0.04);
+        }
+
+        /* Hero Visual - Geometric Frog */
+        .hero-visual {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeSlideUp 1s ease 0.6s both;
+        }
+
+        .hero-frog-container {
+            position: relative;
+            width: 380px;
+            height: 380px;
+        }
+
+        /* Radar ring with sweep */
+        .frog-ring {
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(0,229,255,0.12);
+            border-radius: 50%;
+        }
+        /* Radar sweep line — rotated by JS */
+        .radar-sweep {
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 50%; height: 2px;
+            background: linear-gradient(90deg, transparent 0%, var(--accent-cyan) 60%, rgba(0,229,255,0.8) 100%);
+            transform-origin: 0 50%;
+            box-shadow: 0 0 12px var(--accent-cyan);
+            border-radius: 2px;
+        }
+        .radar-trail { display: none; }
+
+        .frog-ring-2 {
+            position: absolute;
+            inset: 30px;
+            border: 1px dashed rgba(255,215,0,0.08);
+            border-radius: 50%;
+        }
+        /* Crosshairs */
+        .frog-ring-2::before, .frog-ring-2::after {
+            content: '';
+            position: absolute;
+            background: rgba(0,229,255,0.06);
+        }
+        .frog-ring-2::before {
+            top: 50%; left: 0; right: 0;
+            height: 1px;
+        }
+        .frog-ring-2::after {
+            left: 50%; top: 0; bottom: 0;
+            width: 1px;
+        }
+
+        /* The Frog SVG - geometric/cyberpunk style */
+        .frog-svg-wrap {
+            position: absolute;
+            inset: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .frog-glow {
+            position: absolute;
+            width: 200px; height: 200px;
+            background: radial-gradient(circle, var(--glow-cyan), transparent 70%);
+            filter: blur(40px);
+            opacity: 0.4;
+        }
+
+        /* Radar blip — dot + label, positioned on the ring edge by JS */
+        .radar-blip {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            opacity: 0;
+            transition: opacity 1s ease, transform 1s ease;
+            transform: scale(0.9);
+            pointer-events: none;
+            white-space: nowrap;
+        }
+        .radar-blip.active {
+            opacity: 1;
+            transform: scale(1);
+            transition: opacity 0.1s ease, transform 0.1s ease;
+        }
+        .radar-blip.fading { opacity: 0.2; transform: scale(0.95); }
+
+        .blip-dot {
+            width: 8px; height: 8px;
+            background: var(--accent-cyan);
+            border-radius: 50%;
+            box-shadow: 0 0 12px var(--accent-cyan);
+            flex-shrink: 0;
+        }
+        .blip-label {
+            font-family: 'DM Sans', monospace;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            color: var(--accent-cyan);
+            text-shadow: 0 0 8px rgba(0,229,255,0.5);
+        }
+        /* Red HOT blips */
+        .radar-blip--hot .blip-dot {
+            background: #ff3c3c;
+            box-shadow: 0 0 14px rgba(255,60,60,0.7);
+        }
+        .radar-blip--hot .blip-label {
+            color: #ff6b6b;
+            text-shadow: 0 0 8px rgba(255,60,60,0.5);
+        }
+
+        @keyframes fadeSlideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ========== SECTION COMMON ========== */
+        .section {
+            padding: 7rem 5%;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            padding: 0.3rem 1rem;
+            border: 1px solid rgba(0,229,255,0.2);
+            border-radius: 4px;
+        }
+
+        .section-title {
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            font-weight: 800;
+            color: var(--text-white);
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ========== BENTO SERVICES GRID ========== */
+        /* #5: Added grid-auto-flow: dense to fill gaps automatically */
+        .bento-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: minmax(220px, auto);
+            grid-auto-flow: dense;
+            gap: 1.2rem;
+        }
+
+        .bento-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            cursor: default;
+        }
+
+        .bento-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0,229,255,0.04), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        /* #8: hover glow effect matching card number color */
+        .bento-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(0,229,255,0.08);
+        }
+        .bento-card:hover::before { opacity: 1; }
+
+        /* #16: will-change only on hover to prevent paint on load */
+        .bento-card:hover {
+            will-change: transform;
+        }
+
+        /* Accent stripe on top */
+        .bento-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-gold));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .bento-card:hover::after { opacity: 1; }
+
+        /* #8: Subtle hover glow per card */
+        .bento-card:hover .bento-num {
+            color: rgba(0,229,255,0.12);
+            text-shadow: 0 0 30px rgba(0,229,255,0.15);
+        }
+
+        /* Card sizes */
+        .bento-card--wide { grid-column: span 2; }
+        .bento-card--tall { grid-row: span 2; }
+
+        /* HOT services accent (red) */
+        .bento-card--hot {
+            border-color: rgba(255, 60, 60, 0.25);
+            background: linear-gradient(135deg, rgba(255, 60, 60, 0.04), var(--bg-card) 60%);
+        }
+        .bento-card--hot::after {
+            background: linear-gradient(90deg, #ff3c3c, #ff6b35);
+            opacity: 0.7;
+        }
+        .bento-card--hot:hover {
+            border-color: rgba(255, 60, 60, 0.45);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(255,60,60,0.15);
+        }
+        .bento-card--hot .bento-icon {
+            background: rgba(255, 60, 60, 0.08);
+            border-color: rgba(255, 60, 60, 0.15);
+        }
+        .bento-card--hot .bento-icon svg {
+            stroke: #ff3c3c;
+        }
+        .bento-card--hot:hover .bento-icon {
+            background: rgba(255, 60, 60, 0.15);
+            border-color: rgba(255, 60, 60, 0.35);
+            box-shadow: 0 0 20px rgba(255,60,60,0.2);
+        }
+        .bento-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            padding: 0.25rem 0.8rem;
+            background: linear-gradient(135deg, #ff3c3c, #ff6b35);
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            border-radius: 4px;
+            z-index: 2;
+            box-shadow: 0 2px 12px rgba(255,60,60,0.35);
+            animation: hotPulse 2s ease-in-out infinite;
+        }
+        @keyframes hotPulse {
+            0%, 100% { box-shadow: 0 2px 12px rgba(255,60,60,0.35); }
+            50% { box-shadow: 0 2px 20px rgba(255,60,60,0.55); }
+        }
+
+        .bento-icon {
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,229,255,0.06);
+            border: 1px solid rgba(0,229,255,0.1);
+            border-radius: 12px;
+            margin-bottom: 1.2rem;
+            transition: all 0.4s ease;
+            flex-shrink: 0;
+        }
+        .bento-icon svg {
+            width: 24px; height: 24px;
+            stroke: var(--accent-cyan);
+            stroke-width: 1.5;
+            fill: none;
+        }
+        .bento-card:hover .bento-icon {
+            background: rgba(0,229,255,0.12);
+            border-color: rgba(0,229,255,0.25);
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0,229,255,0.15);
+        }
+
+        .bento-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 0.6rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .bento-card p {
+            font-size: 0.95rem;
+            color: var(--text-dim);
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Large number watermark */
+        .bento-num {
+            position: absolute;
+            top: 1rem; right: 1.5rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 4rem;
+            font-weight: 800;
+            color: rgba(0,229,255,0.04);
+            line-height: 1;
+            pointer-events: none;
+            transition: color 0.4s ease, text-shadow 0.4s ease;
+        }
+
+        /* ========== WHY CHOOSE US ========== */
+        .stats-row {
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .stat-block {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        .stat-block:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-4px);
+        }
+
+        .stat-block::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-gold));
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+        }
+        .stat-block:hover::before { transform: scaleX(1); }
+
+        .stat-val {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-desc {
+            font-size: 0.95rem;
+            color: var(--text-dim);
+            font-weight: 500;
+        }
+
+        /* Feature cards */
+        .features-row {
+            max-width: 1200px;
+            margin: 0 auto 5rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .feat-card {
+            padding: 2.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .feat-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-4px);
+        }
+
+        .feat-card .feat-icon {
+            width: 56px; height: 56px;
+            background: rgba(0,229,255,0.06);
+            border: 1px solid rgba(0,229,255,0.1);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            transition: all 0.4s ease;
+        }
+        .feat-card .feat-icon svg {
+            width: 28px; height: 28px;
+            stroke: var(--accent-cyan);
+            stroke-width: 1.5;
+            fill: none;
+        }
+        .feat-card:hover .feat-icon {
+            background: rgba(0,229,255,0.12);
+            border-color: rgba(0,229,255,0.3);
+        }
+
+        .feat-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-white);
+        }
+
+        .feat-card p {
+            font-size: 0.95rem;
+            color: var(--text-dim);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .progress-track {
+            width: 100%;
+            height: 4px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-gold));
+            border-radius: 4px;
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 10px var(--glow-cyan);
+        }
+
+        .progress-lbl {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+
+        /* ========== FULL-CYCLE STAGES ========== */
+        /* #6: Changed from 5 columns to 3, with proper tablet/mobile handling */
+        .stages-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+        }
+
+        .stage-card {
+            padding: 2rem 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        .stage-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        .stage-num {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, rgba(0,229,255,0.15), rgba(255,215,0,0.1));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .stage-icon {
+            width: 60px; height: 60px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,229,255,0.06);
+            border: 1px solid rgba(0,229,255,0.1);
+            border-radius: 14px;
+            transition: all 0.4s ease;
+        }
+        .stage-icon svg {
+            width: 28px; height: 28px;
+            stroke: var(--accent-cyan);
+            stroke-width: 1.5;
+            fill: none;
+        }
+        .stage-card:hover .stage-icon {
+            background: rgba(0,229,255,0.15);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 20px rgba(0,229,255,0.2);
+        }
+
+        .stage-card h3 {
+            font-size: 1.15rem;
+            color: var(--text-white);
+            margin-bottom: 0.6rem;
+        }
+        .stage-card p {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            line-height: 1.6;
+        }
+
+        /* #6: Connector arrows - only show on wide screens with 3-col grid */
+        @media (min-width: 769px) {
+            .stage-card:not(:nth-child(3n)):not(:last-child)::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: -0.8rem;
+                width: 0.4rem;
+                height: 0.4rem;
+                border-top: 2px solid var(--accent-cyan);
+                border-right: 2px solid var(--accent-cyan);
+                transform: translateY(-50%) rotate(45deg);
+                opacity: 0.3;
+            }
+        }
+
+        /* ========== CONTACT ========== */
+        .contact-section {
+            padding: 7rem 5%;
+        }
+
+        .contact-card {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 3.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-gold), var(--accent-magenta));
+        }
+
+        .contact-card h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            color: var(--text-white);
+        }
+
+        .contact-card > p {
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 1.05rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .form-field { display: flex; flex-direction: column; gap: 0.4rem; }
+        .form-field--full { grid-column: 1 / -1; }
+
+        .form-field label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-dim);
+            letter-spacing: 0.02em;
+        }
+
+        .form-field input,
+        .form-field textarea {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            background: rgba(0,229,255,0.03);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            color: var(--text-white);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+        .form-field input:focus,
+        .form-field textarea:focus {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 0 3px rgba(0,229,255,0.1);
+            background: rgba(0,229,255,0.06);
+        }
+        .form-field input::placeholder,
+        .form-field textarea::placeholder {
+            color: var(--text-muted);
+        }
+        .form-field textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.1rem;
+            background: var(--accent-cyan);
+            color: var(--bg-primary);
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 25px var(--glow-cyan);
+            margin-bottom: 1rem;
+        }
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 40px var(--glow-cyan);
+        }
+        .submit-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-msg {
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            display: none;
+            font-size: 0.95rem;
+        }
+        .form-msg.success {
+            display: block;
+            background: rgba(0,229,255,0.08);
+            border: 1px solid rgba(0,229,255,0.3);
+            color: var(--accent-cyan);
+        }
+        .form-msg.error {
+            display: block;
+            background: rgba(255,45,149,0.08);
+            border: 1px solid rgba(255,45,149,0.3);
+            color: var(--accent-magenta);
+        }
+
+        /* #10: contact-bottom with email + telegram */
+        .contact-bottom {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-subtle);
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .contact-bottom-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-cyan);
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        .contact-bottom-item:hover {
+            opacity: 0.8;
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            text-align: center;
+            padding: 2.5rem 5%;
+            border-top: 1px solid var(--border-subtle);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* ========== FROG MASCOT (fixed, bottom-right) ========== */
+        .frog-mascot {
+            position: fixed;
+            bottom: 24px;
+            right: 32px;
+            z-index: 998;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .frog-mascot:hover {
+            transform: scale(1.05) translateY(-4px);
+        }
+
+        .frog-mascot svg {
+            width: 100px;
+            height: 100px;
+            filter: drop-shadow(0 4px 20px rgba(0,229,255,0.3));
+        }
+
+        .frog-tooltip {
+            position: absolute;
+            bottom: 110px;
+            right: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border-hover);
+            color: var(--accent-cyan);
+            padding: 0.7rem 1.2rem;
+            border-radius: 10px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+        }
+        .frog-tooltip::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            right: 30px;
+            width: 12px; height: 12px;
+            background: var(--bg-card);
+            border-right: 1px solid var(--border-hover);
+            border-bottom: 1px solid var(--border-hover);
+            transform: rotate(45deg);
+        }
+        .frog-mascot:hover .frog-tooltip {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ========== SCROLL REVEAL ========== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 1100px) {
+            .bento-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .bento-card--wide { grid-column: span 2; }
+            .bento-card--tall { grid-row: span 1; }
+
+            .stages-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 968px) {
+            .hamburger { display: flex; }
+
+            .nav-links {
+                position: fixed;
+                top: 0; right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: rgba(8,11,26,0.97);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 100px 2rem 2rem;
+                gap: 0.5rem;
+                transition: right 0.4s ease;
+                border-left: 1px solid var(--border-subtle);
+                z-index: 999;
+            }
+            .nav-links.open { right: 0; }
+            .nav-links a {
+                width: 100%;
+                text-align: center;
+                padding: 1rem;
+                min-height: 48px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .nav-links li:last-child > a.nav-cta { margin-left: 0; margin-top: 1rem; }
+
+            .hero-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-sub { margin-left: auto; margin-right: auto; }
+            .hero-actions { justify-content: center; }
+
+            /* #13: Show smaller hero visual on mobile instead of hiding */
+            .hero-visual {
+                justify-content: center;
+            }
+            .hero-frog-container {
+                width: 220px;
+                height: 220px;
+            }
+
+            .stats-row { grid-template-columns: repeat(2, 1fr); }
+            .features-row { grid-template-columns: 1fr; }
+
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+            .bento-card--wide { grid-column: span 1; }
+
+            .stages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-grid { grid-template-columns: 1fr; }
+
+            .contact-card { padding: 2.5rem 2rem; }
+        }
+
+        @media (max-width: 600px) {
+            .hero { padding-top: 6rem; min-height: auto; padding-bottom: 3rem; }
+            .hero h1 { font-size: 2.4rem; }
+            .hero-frog-container {
+                width: 180px;
+                height: 180px;
+            }
+            .stats-row { grid-template-columns: 1fr 1fr; gap: 1rem; }
+            .stat-val { font-size: 2rem; }
+            .section { padding: 4rem 5%; }
+            .frog-mascot { display: none; }
+        }
+
+        /* ========== SEPARATOR LINE ========== */
+        .divider {
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-subtle), rgba(0,229,255,0.15), var(--border-subtle), transparent);
+        }
+    </style>
+</head>
+<body>
+    <!-- Background -->
+    <div class="bg-canvas">
+        <div class="bg-mesh bg-mesh--1"></div>
+        <div class="bg-mesh bg-mesh--2"></div>
+        <div class="bg-mesh bg-mesh--3"></div>
+    </div>
+    <div class="bg-grid"></div>
+
+    <!-- Frog Mascot (cyberpunk geometric) -->
+    <div class="frog-mascot" id="frogMascot" role="button" tabindex="0" aria-label="Need advice? Click to go to contact form">
+        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <!-- Body glow -->
+            <defs>
+                <radialGradient id="fglow" cx="50%" cy="50%">
+                    <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.3"/>
+                    <stop offset="100%" stop-color="#00e5ff" stop-opacity="0"/>
+                </radialGradient>
+                <linearGradient id="fbody" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#0d1129"/>
+                    <stop offset="100%" stop-color="#111638"/>
+                </linearGradient>
+                <linearGradient id="fcyan" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#00e5ff"/>
+                    <stop offset="100%" stop-color="#ffd700"/>
+                </linearGradient>
+            </defs>
+            <circle cx="60" cy="60" r="50" fill="url(#fglow)"/>
+            <!-- Hexagonal body -->
+            <polygon points="60,18 92,36 92,72 60,90 28,72 28,36" fill="url(#fbody)" stroke="#00e5ff" stroke-width="1.5" opacity="0.9"/>
+            <!-- Inner hex -->
+            <polygon points="60,30 80,42 80,66 60,78 40,66 40,42" fill="none" stroke="#00e5ff" stroke-width="0.5" opacity="0.3"/>
+            <!-- Eyes -->
+            <circle cx="48" cy="48" r="8" fill="#0d1129" stroke="#00e5ff" stroke-width="1.5"/>
+            <circle cx="72" cy="48" r="8" fill="#0d1129" stroke="#00e5ff" stroke-width="1.5"/>
+            <!-- Pupils (glow) -->
+            <circle cx="48" cy="48" r="3" fill="#00e5ff" opacity="0.9">
+                <animate attributeName="opacity" values="0.9;0.5;0.9" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="72" cy="48" r="3" fill="#00e5ff" opacity="0.9">
+                <animate attributeName="opacity" values="0.9;0.5;0.9" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+            </circle>
+            <!-- Eye reflections -->
+            <circle cx="46" cy="46" r="1.5" fill="white" opacity="0.4"/>
+            <circle cx="70" cy="46" r="1.5" fill="white" opacity="0.4"/>
+            <!-- Smile -->
+            <path d="M48,62 Q60,72 72,62" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+            <!-- Crown -->
+            <path d="M44,20 L48,12 L54,18 L60,10 L66,18 L72,12 L76,20" fill="none" stroke="#ffd700" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+            <!-- Circuit lines -->
+            <line x1="28" y1="54" x2="18" y2="54" stroke="#00e5ff" stroke-width="0.8" opacity="0.3"/>
+            <line x1="92" y1="54" x2="102" y2="54" stroke="#00e5ff" stroke-width="0.8" opacity="0.3"/>
+            <circle cx="16" cy="54" r="2" fill="#00e5ff" opacity="0.3"/>
+            <circle cx="104" cy="54" r="2" fill="#00e5ff" opacity="0.3"/>
+            <!-- Legs/feet (geometric) -->
+            <path d="M40,78 L36,95 L30,98" fill="none" stroke="#00e5ff" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+            <path d="M80,78 L84,95 L90,98" fill="none" stroke="#00e5ff" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+            <circle cx="30" cy="98" r="3" fill="none" stroke="#00e5ff" stroke-width="0.8" opacity="0.3"/>
+            <circle cx="90" cy="98" r="3" fill="none" stroke="#00e5ff" stroke-width="0.8" opacity="0.3"/>
+        </svg>
+        <div class="frog-tooltip">Need advice?</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <!-- #7 & #14: Logo links to #home for scroll-to-top -->
+        <a href="#home" class="logo">
+            <div class="logo-mark">
+                <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="44" height="44" rx="12" fill="none" stroke="url(#logoGrad)" stroke-width="1.5"/>
+                    <defs>
+                        <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#00e5ff"/>
+                            <stop offset="100%" stop-color="#ffd700"/>
+                        </linearGradient>
+                    </defs>
+                    <text x="24" y="33" text-anchor="middle" font-family="Syne, sans-serif" font-size="26" font-weight="800" fill="#00e5ff">S</text>
+                </svg>
+            </div>
+            <div class="logo-text">
+                <span class="logo-name">Sky Advising</span>
+                <span class="logo-tag">Web3 Agency</span>
+            </div>
+        </a>
+
+        <!-- #15: Added aria-expanded for accessibility -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Growth</a></li>
+            <li><a href="#advisory">Advisory</a></li>
+            <li><a href="#about">Why Us</a></li>
+            <li><a href="#contact" class="nav-cta">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="home">
+        <div class="hero-inner">
+            <div class="hero-text">
+                <div class="hero-eyebrow">Web3 Full-Cycle Advisory</div>
+                <h1>
+                    <span class="line-1">Web3 Full Cycle</span>
+                    <span class="line-2">Advising Agency</span>
+                </h1>
+                <p class="hero-sub">One place with all the answers for your crypto project</p>
+                <div class="hero-actions">
+                    <a href="https://t.me/sky_advising" target="_blank" rel="noopener" class="btn-primary">
+                        Reach Out
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="#services" class="btn-outline">Explore Services</a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-frog-container">
+                    <div class="frog-ring">
+                        <div class="radar-sweep" id="radarSweep"></div>
+                        <div class="radar-trail" id="radarTrail"></div>
+                    </div>
+                    <div class="frog-ring-2"></div>
+                    <div class="radar-blip" id="blip0"><div class="blip-dot"></div><span class="blip-label">TOKENOMICS</span></div>
+                    <div class="radar-blip" id="blip1"><div class="blip-dot"></div><span class="blip-label">FUNDRAISING</span></div>
+                    <div class="radar-blip" id="blip2"><div class="blip-dot"></div><span class="blip-label">SMART CONTRACTS</span></div>
+                    <div class="radar-blip" id="blip3"><div class="blip-dot"></div><span class="blip-label">MARKET MAKING</span></div>
+                    <div class="radar-blip radar-blip--hot" id="blip4"><div class="blip-dot"></div><span class="blip-label">COLD OUTREACH</span></div>
+                    <div class="radar-blip radar-blip--hot" id="blip5"><div class="blip-dot"></div><span class="blip-label">OUTSOURCE BD</span></div>
+                    <div class="frog-svg-wrap">
+                        <div class="frog-glow"></div>
+                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="260" height="260">
+                            <defs>
+                                <radialGradient id="hglow" cx="50%" cy="50%">
+                                    <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.2"/>
+                                    <stop offset="100%" stop-color="#00e5ff" stop-opacity="0"/>
+                                </radialGradient>
+                                <linearGradient id="hbody" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#111638"/>
+                                    <stop offset="100%" stop-color="#161d4a"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="100" cy="100" r="90" fill="url(#hglow)"/>
+                            <!-- Main hex body -->
+                            <polygon points="100,20 165,45 165,115 100,140 35,115 35,45" fill="url(#hbody)" stroke="#00e5ff" stroke-width="1.5" opacity="0.85"/>
+                            <!-- Inner detail hex -->
+                            <polygon points="100,38 148,55 148,105 100,122 52,105 52,55" fill="none" stroke="#00e5ff" stroke-width="0.6" opacity="0.2"/>
+                            <!-- Cross-lines inside -->
+                            <line x1="100" y1="38" x2="100" y2="122" stroke="#00e5ff" stroke-width="0.3" opacity="0.15"/>
+                            <line x1="52" y1="80" x2="148" y2="80" stroke="#00e5ff" stroke-width="0.3" opacity="0.15"/>
+                            <!-- Eyes - larger -->
+                            <circle cx="78" cy="68" r="14" fill="#0d1129" stroke="#00e5ff" stroke-width="1.5"/>
+                            <circle cx="122" cy="68" r="14" fill="#0d1129" stroke="#00e5ff" stroke-width="1.5"/>
+                            <!-- Iris rings -->
+                            <circle cx="78" cy="68" r="9" fill="none" stroke="#00e5ff" stroke-width="0.5" opacity="0.3"/>
+                            <circle cx="122" cy="68" r="9" fill="none" stroke="#00e5ff" stroke-width="0.5" opacity="0.3"/>
+                            <!-- Pupils -->
+                            <circle cx="78" cy="68" r="5" fill="#00e5ff" opacity="0.85">
+                                <animate attributeName="opacity" values="0.85;0.4;0.85" dur="4s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="122" cy="68" r="5" fill="#00e5ff" opacity="0.85">
+                                <animate attributeName="opacity" values="0.85;0.4;0.85" dur="4s" repeatCount="indefinite" begin="1s"/>
+                            </circle>
+                            <!-- Eye shine -->
+                            <circle cx="75" cy="65" r="2.5" fill="white" opacity="0.35"/>
+                            <circle cx="119" cy="65" r="2.5" fill="white" opacity="0.35"/>
+                            <!-- Smile -->
+                            <path d="M75,95 Q100,115 125,95" fill="none" stroke="#00e5ff" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+                            <!-- Crown -->
+                            <path d="M68,24 L75,10 L85,22 L100,5 L115,22 L125,10 L132,24" fill="none" stroke="#ffd700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+                            <!-- Crown gems -->
+                            <circle cx="100" cy="8" r="2" fill="#ffd700" opacity="0.6"/>
+                            <!-- Circuit arms -->
+                            <path d="M35,80 L15,80 L10,75" fill="none" stroke="#00e5ff" stroke-width="1" stroke-linecap="round" opacity="0.25"/>
+                            <path d="M165,80 L185,80 L190,75" fill="none" stroke="#00e5ff" stroke-width="1" stroke-linecap="round" opacity="0.25"/>
+                            <circle cx="10" cy="75" r="2.5" fill="none" stroke="#00e5ff" stroke-width="0.8" opacity="0.25"/>
+                            <circle cx="190" cy="75" r="2.5" fill="none" stroke="#00e5ff" stroke-width="0.8" opacity="0.25"/>
+                            <!-- Legs -->
+                            <path d="M65,130 L55,160 L45,168" fill="none" stroke="#00e5ff" stroke-width="1.2" stroke-linecap="round" opacity="0.35"/>
+                            <path d="M135,130 L145,160 L155,168" fill="none" stroke="#00e5ff" stroke-width="1.2" stroke-linecap="round" opacity="0.35"/>
+                            <!-- Feet pads -->
+                            <circle cx="45" cy="168" r="4" fill="none" stroke="#00e5ff" stroke-width="0.8" opacity="0.25"/>
+                            <circle cx="155" cy="168" r="4" fill="none" stroke="#00e5ff" stroke-width="0.8" opacity="0.25"/>
+                            <!-- Nostrils -->
+                            <circle cx="92" cy="85" r="1.5" fill="#00e5ff" opacity="0.2"/>
+                            <circle cx="108" cy="85" r="1.5" fill="#00e5ff" opacity="0.2"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== BLOCK 1: BUSINESS DEVELOPMENT ========== -->
+    <section class="section" id="services">
+        <div class="section-header">
+            <div class="section-label">Business Development</div>
+            <h2 class="section-title">Growth & Outreach</h2>
+            <p class="section-subtitle">Strategic partnerships, ecosystem growth, and multi-channel outreach at scale</p>
+        </div>
+
+        <div class="bento-grid">
+            <!-- 1. Cold Outreach (HOT) -->
+            <div class="bento-card bento-card--wide bento-card--hot reveal">
+                <div class="bento-badge">HOT</div>
+                <div class="bento-num">01</div>
+                <div class="bento-icon">
+                    <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8"/><path d="M8 13h5"/></svg>
+                </div>
+                <h3>Cold Outreach</h3>
+                <p>Done-for-you multi-channel outreach via Telegram, LinkedIn & Email. We find and engage your target audience at scale</p>
+            </div>
+
+            <!-- 2. Outreach Platform (HOT) -->
+            <div class="bento-card bento-card--wide bento-card--hot reveal reveal-delay-1">
+                <div class="bento-badge">HOT</div>
+                <div class="bento-num">02</div>
+                <div class="bento-icon">
+                    <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><path d="M7 8l3 3-3 3"/><line x1="12" y1="14" x2="17" y2="14"/></svg>
+                </div>
+                <h3>Outreach Platform</h3>
+                <p>Self-service outreach SaaS with anti-detect tech, campaign automation, built-in CRM, and real-time analytics</p>
+            </div>
+
+            <!-- 3. Business Development -->
+            <div class="bento-card bento-card--wide reveal reveal-delay-2">
+                <div class="bento-num">03</div>
+                <div class="bento-icon">
+                    <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+                <h3>Strategic Partnerships</h3>
+                <p>Strategic partnerships and ecosystem growth initiatives to expand your project's reach and impact</p>
+            </div>
+
+            <!-- 4. Fundraising -->
+            <div class="bento-card bento-card--wide reveal">
+                <div class="bento-num">04</div>
+                <div class="bento-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                </div>
+                <h3>Fundraising</h3>
+                <p>Connect with the right investors and secure capital for your project</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ========== BLOCK 2: ADVISORY SERVICES ========== -->
+    <section class="section" id="advisory">
+        <div class="section-header">
+            <div class="section-label">Advisory</div>
+            <h2 class="section-title">Advisory Services</h2>
+            <p class="section-subtitle">Full-cycle Web3 consulting from concept to launch and beyond</p>
+        </div>
+
+        <div class="bento-grid">
+            <!-- 1. Research & Consulting (wide) -->
+            <div class="bento-card bento-card--wide reveal">
+                <div class="bento-num">01</div>
+                <div class="bento-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8a3 3 0 1 0 0 6"/></svg>
+                </div>
+                <h3>Research & Consulting</h3>
+                <p>Deep market analysis and strategic consulting to position your project for success</p>
+            </div>
+
+            <!-- 2. Tokenomics Design -->
+            <div class="bento-card reveal reveal-delay-1">
+                <div class="bento-num">02</div>
+                <div class="bento-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="2"/></svg>
+                </div>
+                <h3>Tokenomics Design</h3>
+                <p>Custom token economics tailored to your project's goals and ecosystem</p>
+            </div>
+
+            <!-- 3. Marketing & PR -->
+            <div class="bento-card reveal reveal-delay-2">
+                <div class="bento-num">03</div>
+                <div class="bento-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                </div>
+                <h3>Marketing & PR</h3>
+                <p>Strategic marketing campaigns and community building</p>
+            </div>
+
+            <!-- 4. Market Making -->
+            <div class="bento-card reveal">
+                <div class="bento-num">04</div>
+                <div class="bento-icon">
+                    <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                </div>
+                <h3>Market Making</h3>
+                <p>Liquidity provision and market operations for optimal token performance</p>
+            </div>
+
+            <!-- 5. Exchange Listings -->
+            <div class="bento-card reveal reveal-delay-1">
+                <div class="bento-num">05</div>
+                <div class="bento-icon">
+                    <svg viewBox="0 0 24 24"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
+                </div>
+                <h3>Exchange Listings</h3>
+                <p>Navigate the listing process on major centralized and decentralized exchanges</p>
+            </div>
+
+            <!-- 6. Smart Contract Audit (wide) -->
+            <div class="bento-card bento-card--wide reveal reveal-delay-2">
+                <div class="bento-num">06</div>
+                <div class="bento-icon">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1"/><path d="M12 17v2"/></svg>
+                </div>
+                <h3>Smart Contract Audit</h3>
+                <p>Comprehensive security audits to ensure your contracts are bulletproof</p>
+            </div>
+
+            <!-- 7. Technical Development -->
+            <div class="bento-card reveal">
+                <div class="bento-num">07</div>
+                <div class="bento-icon">
+                    <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="12" y1="2" x2="12" y2="22"/></svg>
+                </div>
+                <h3>Technical Development</h3>
+                <p>Full-stack blockchain development from concept to deployment</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ========== WHY CHOOSE US ========== -->
+    <section class="section" id="about">
+        <div class="section-header">
+            <div class="section-label">Why Us</div>
+            <h2 class="section-title">Why Choose Us</h2>
+            <p class="section-subtitle">Full-cycle support backed by proven results</p>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-row">
+            <div class="stat-block reveal">
+                <div class="stat-val">50+</div>
+                <div class="stat-desc">Projects Launched</div>
+            </div>
+            <div class="stat-block reveal reveal-delay-1">
+                <div class="stat-val">$500M+</div>
+                <div class="stat-desc">Total Raised</div>
+            </div>
+            <div class="stat-block reveal reveal-delay-2">
+                <div class="stat-val">95%</div>
+                <div class="stat-desc">Success Rate</div>
+            </div>
+            <div class="stat-block reveal reveal-delay-3">
+                <div class="stat-val">24/7</div>
+                <div class="stat-desc">Support Available</div>
+            </div>
+        </div>
+
+        <!-- Feature Cards -->
+        <div class="features-row">
+            <div class="feat-card reveal">
+                <div class="feat-icon">
+                    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <h3>Expert Team</h3>
+                <p>Seasoned professionals from top-tier crypto projects with decades of combined experience</p>
+                <div class="progress-track">
+                    <div class="progress-bar" data-width="95" style="width: 0%"></div>
+                </div>
+                <span class="progress-lbl">Team Expertise: 95%</span>
+            </div>
+
+            <div class="feat-card reveal reveal-delay-1">
+                <div class="feat-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                </div>
+                <h3>Full-Cycle Coverage</h3>
+                <p>From initial concept to post-launch scaling, we're with you every step of the journey</p>
+                <div class="progress-track">
+                    <div class="progress-bar" data-width="100" style="width: 0%"></div>
+                </div>
+                <span class="progress-lbl">Service Coverage: 100%</span>
+            </div>
+
+            <div class="feat-card reveal reveal-delay-2">
+                <div class="feat-icon">
+                    <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                </div>
+                <h3>Proven Track Record</h3>
+                <p>Our clients consistently outperform market averages with higher ROI and faster growth</p>
+                <div class="progress-track">
+                    <div class="progress-bar" data-width="92" style="width: 0%"></div>
+                </div>
+                <span class="progress-lbl">Client Satisfaction: 92%</span>
+            </div>
+        </div>
+
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ========== FULL-CYCLE STAGES ========== -->
+    <section class="section">
+        <div class="section-header">
+            <div class="section-label">Process</div>
+            <h2 class="section-title">Full-Cycle Approach</h2>
+            <p class="section-subtitle">We're with you every step of the way</p>
+        </div>
+
+        <div class="stages-grid">
+            <div class="stage-card reveal">
+                <div class="stage-num">01</div>
+                <div class="stage-icon">
+                    <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                </div>
+                <h3>Build</h3>
+                <p>Kickstart your journey with curated project ideas, founder starter pack, and essential startup resources</p>
+            </div>
+
+            <div class="stage-card reveal reveal-delay-1">
+                <div class="stage-num">02</div>
+                <div class="stage-icon">
+                    <svg viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+                </div>
+                <h3>Launch</h3>
+                <p>Get your project live with ease using our step-by-step guide. From setup to deployment, we walk you through every stage</p>
+            </div>
+
+            <div class="stage-card reveal reveal-delay-2">
+                <div class="stage-num">03</div>
+                <div class="stage-icon">
+                    <svg viewBox="0 0 24 24"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+                </div>
+                <h3>Scale and Grow</h3>
+                <p>Take your project to the next level with accelerator programs and support from strategic ecosystem partners</p>
+            </div>
+
+            <div class="stage-card reveal reveal-delay-3">
+                <div class="stage-num">04</div>
+                <div class="stage-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                </div>
+                <h3>Fundraising</h3>
+                <p>Navigate available funding opportunities and secure capital with guidance from experienced advisors</p>
+            </div>
+
+            <div class="stage-card reveal reveal-delay-4">
+                <div class="stage-num">05</div>
+                <div class="stage-icon">
+                    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <h3>Support</h3>
+                <p>Get hands-on support both online and in-person through pitch competitions, ecosystem office hours, and major conferences</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="contact-section" id="contact">
+        <div class="contact-card reveal">
+            <h2>Let's Build Together</h2>
+            <p>Ready to take your Web3 project to the next level?</p>
+
+            <form id="contactForm">
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="Your name">
+                    </div>
+                    <div class="form-field">
+                        <label for="telegram">Telegram Handle *</label>
+                        <input type="text" id="telegram" name="telegram" required placeholder="@yourtelegram">
+                    </div>
+                    <div class="form-field form-field--full">
+                        <label for="project">Project Name</label>
+                        <input type="text" id="project" name="project" placeholder="Your project (optional)">
+                    </div>
+                    <div class="form-field form-field--full">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required placeholder="Tell us about your project..."></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+                <div class="form-msg" id="formMessage"></div>
+            </form>
+
+            <!-- #10: Added email alongside Telegram -->
+            <div class="contact-bottom">
+                <a href="https://t.me/sky_advising" target="_blank" rel="noopener noreferrer" class="contact-bottom-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    <span>@sky_advising</span>
+                </a>
+                <a href="https://x.com/SkyAdvising" target="_blank" rel="noopener noreferrer" class="contact-bottom-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733-16z"/><path d="M4 20l6.768-6.768"/><path d="M20 4l-6.768 6.768"/></svg>
+                    <span>@SkyAdvising</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (#2: year fixed to 2026) -->
+    <footer>
+        <p>&copy; 2026 Sky Advising. All rights reserved.</p>
+    </footer>
+
+    <script>
+    (function() {
+        'use strict';
+
+        // ===== Mobile Menu =====
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        const allNavLinks = navLinks.querySelectorAll('a');
+
+        function toggleMenu() {
+            const isOpen = hamburger.classList.toggle('open');
+            navLinks.classList.toggle('open');
+            hamburger.setAttribute('aria-expanded', isOpen);
+        }
+
+        hamburger.addEventListener('click', toggleMenu);
+
+        // #15: Keyboard accessibility for hamburger
+        hamburger.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleMenu();
+            }
+        });
+
+        allNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                navLinks.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+                hamburger.classList.remove('open');
+                navLinks.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // ===== Smooth Scroll with nav offset (#3) =====
+        const NAV_OFFSET = 80;
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const href = this.getAttribute('href');
+                const target = document.querySelector(href);
+                if (target) {
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - NAV_OFFSET;
+                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // ===== Nav Scroll Effect =====
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 80) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }, { passive: true });
+
+        // ===== Active Nav Link =====
+        const sections = document.querySelectorAll('section[id]');
+        const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navAnchors.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        }, { passive: true });
+
+        // ===== Scroll Reveal + Progress Bars (#12) =====
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+
+                    // #12: Animate progress bars inside revealed elements
+                    const bars = entry.target.querySelectorAll('.progress-bar');
+                    bars.forEach(bar => {
+                        const w = bar.getAttribute('data-width');
+                        if (w) {
+                            setTimeout(() => { bar.style.width = w + '%'; }, 300);
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // Also observe feat-cards individually for progress bars (#12)
+        const featObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const bars = entry.target.querySelectorAll('.progress-bar');
+                    bars.forEach(bar => {
+                        const w = bar.getAttribute('data-width');
+                        if (w && bar.style.width === '0%') {
+                            setTimeout(() => { bar.style.width = w + '%'; }, 400);
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll('.feat-card').forEach(el => featObserver.observe(el));
+
+        // ===== Radar + Blips — fully JS-driven =====
+        const sweepEl = document.getElementById('radarSweep');
+        const trailEl = document.getElementById('radarTrail');
+        const container = document.querySelector('.hero-frog-container');
+        const blips = [
+            { el: document.getElementById('blip0'), angle: 0 },    // right
+            { el: document.getElementById('blip1'), angle: 60 },   // bottom-right
+            { el: document.getElementById('blip2'), angle: 120 },  // bottom-left
+            { el: document.getElementById('blip3'), angle: 180 },  // left
+            { el: document.getElementById('blip4'), angle: 240 },  // top-left (red)
+            { el: document.getElementById('blip5'), angle: 300 },  // top-right (red)
+        ];
+        const CYCLE = 12000; // ms per full rotation
+        const t0 = performance.now();
+
+        // Place blip DOTS centered on the ring edge
+        function positionBlips() {
+            const r = container.offsetWidth / 2;
+            const cx = r, cy = r;
+            blips.forEach(b => {
+                const rad = b.angle * Math.PI / 180;
+                const x = cx + r * Math.cos(rad);
+                const y = cy + r * Math.sin(rad);
+                // Center the dot (8px) on the ring point
+                b.el.style.left = (x - 4) + 'px';
+                b.el.style.top = (y - 4) + 'px';
+                if (b.angle > 90 && b.angle < 270) {
+                    b.el.style.flexDirection = 'row-reverse';
+                }
+            });
+        }
+        positionBlips();
+        window.addEventListener('resize', positionBlips);
+
+        function tick(now) {
+            const sweep = ((now - t0) % CYCLE) / CYCLE * 360;
+
+            sweepEl.style.transform = 'rotate(' + sweep + 'deg)';
+            trailEl.style.transform = 'rotate(' + sweep + 'deg)';
+
+            // Only ONE blip active at a time — the one the sweep just passed
+            let activeIdx = -1;
+            let minPast = 999;
+            blips.forEach((b, i) => {
+                let past = sweep - b.angle;
+                if (past < 0) past += 360;
+                if (past < minPast && past < 70) {
+                    minPast = past;
+                    activeIdx = i;
+                }
+            });
+
+            blips.forEach((b, i) => {
+                let past = sweep - b.angle;
+                if (past < 0) past += 360;
+
+                if (i === activeIdx && past < 25) {
+                    b.el.classList.add('active');
+                    b.el.classList.remove('fading');
+                } else if (i === activeIdx && past < 70) {
+                    b.el.classList.remove('active');
+                    b.el.classList.add('fading');
+                } else {
+                    b.el.classList.remove('active', 'fading');
+                }
+            });
+
+            requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+
+        // ===== Frog Click -> Contact =====
+        const frog = document.getElementById('frogMascot');
+        if (frog) {
+            const goToContact = () => {
+                const contactEl = document.getElementById('contact');
+                const targetPosition = contactEl.getBoundingClientRect().top + window.pageYOffset - NAV_OFFSET;
+                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+            };
+            frog.addEventListener('click', goToContact);
+            // #15: Keyboard accessibility for frog
+            frog.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    goToContact();
+                }
+            });
+        }
+
+        // ===== Contact Form (#4: fixed form message visibility) =====
+        const contactForm = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const submitBtn = contactForm.querySelector('.submit-btn');
+            const formData = new FormData(contactForm);
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            const data = {
+                name: formData.get('name'),
+                telegram: formData.get('telegram'),
+                project: formData.get('project'),
+                message: formData.get('message')
+            };
+
+            try {
+                const response = await fetch('https://formsubmit.co/ajax/contact@skyadvising.com', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    formMessage.textContent = "Message sent successfully! We'll contact you on Telegram soon.";
+                    formMessage.className = 'form-msg success';
+                    contactForm.reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                formMessage.textContent = 'Something went wrong. Please try again or contact us on Telegram directly.';
+                formMessage.className = 'form-msg error';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+                // #4: Properly reset by removing class instead of setting inline display
+                setTimeout(() => {
+                    formMessage.className = 'form-msg';
+                    formMessage.textContent = '';
+                }, 5000);
+            }
+        });
+    })();
+    </script>
+</body>
+</html>
