@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky Advising — BD & Lead Generation for Web3 Companies</title>
+    <meta name="description" content="10x cheaper, 10x more productive than in-house BD. 50K+ crypto contacts. Telegram, LinkedIn, Email outreach + automation.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90' fill='%2300e5ff'>S</text></svg>">
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-primary: #080b1a;
+            --bg-secondary: #0d1129;
+            --bg-card: #111638;
+            --bg-card-hover: #161d4a;
+            --accent-cyan: #00e5ff;
+            --accent-gold: #ffd700;
+            --accent-magenta: #ff2d95;
+            --accent-green: #00ff88;
+            --accent-red: #ff4757;
+            --text-white: #eef0ff;
+            --text-dim: #7b82a8;
+            --text-muted: #4a5080;
+            --border-subtle: rgba(0, 229, 255, 0.08);
+            --border-hover: rgba(0, 229, 255, 0.25);
+            --glow-cyan: rgba(0, 229, 255, 0.4);
+            --glow-gold: rgba(255, 215, 0, 0.3);
+        }
+
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-white);
+            overflow-x: hidden;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+        }
+
+        /* ========== NOISE TEXTURE ========== */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 10;
+            pointer-events: none;
+            opacity: 0.035;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 256px 256px;
+        }
+
+        /* ========== ANIMATED BG ========== */
+        .bg-canvas { position: fixed; inset: 0; z-index: -2; overflow: hidden; }
+        .bg-mesh {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.12;
+        }
+        .bg-mesh--1 {
+            width: 800px; height: 800px;
+            background: radial-gradient(circle, var(--accent-cyan), transparent 70%);
+            top: -20%; left: -10%;
+            animation: meshFloat1 30s ease-in-out infinite alternate;
+        }
+        .bg-mesh--2 {
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, var(--accent-magenta), transparent 70%);
+            top: 40%; right: -15%;
+            animation: meshFloat2 35s ease-in-out infinite alternate;
+        }
+        .bg-mesh--3 {
+            width: 700px; height: 700px;
+            background: radial-gradient(circle, var(--accent-gold), transparent 70%);
+            bottom: -25%; left: 25%;
+            animation: meshFloat3 28s ease-in-out infinite alternate;
+        }
+        @keyframes meshFloat1 { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(150px,100px) scale(1.2); } }
+        @keyframes meshFloat2 { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(-120px,-80px) scale(1.15); } }
+        @keyframes meshFloat3 { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(80px,-120px) scale(0.9); } }
+
+        /* ========== GRID BG ========== */
+        .bg-grid {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background-image:
+                linear-gradient(rgba(0,229,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,229,255,0.03) 1px, transparent 1px);
+            background-size: 80px 80px;
+            mask-image: radial-gradient(ellipse at 50% 50%, black 30%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 30%, transparent 70%);
+        }
+
+        /* ========== LAYOUT ========== */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        /* ========== ANIMATIONS ========== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px var(--glow-cyan); }
+            50% { box-shadow: 0 0 40px var(--glow-cyan), 0 0 60px rgba(0,229,255,0.2); }
+        }
+
+        /* ========== TOPBAR ========== */
+        .topbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(8,11,26,0.85);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .topbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .topbar-logo-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-magenta));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 900;
+            font-size: 1.1rem;
+            color: var(--bg-primary);
+        }
+
+        .topbar-name {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--text-white);
+        }
+
+        .topbar-tag {
+            font-size: 0.6rem;
+            font-weight: 600;
+            color: var(--accent-cyan);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        .topbar-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.5rem;
+            background: var(--accent-cyan);
+            color: var(--bg-primary);
+            font-weight: 700;
+            font-size: 0.85rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px var(--glow-cyan);
+        }
+        .topbar-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 40px var(--glow-cyan);
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 5rem;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background: rgba(0,229,255,0.08);
+            border: 1px solid rgba(0,229,255,0.2);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent-cyan);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.05;
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+        }
+
+        .hero h1 .gradient-text {
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-sub {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            max-width: 620px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-value {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--accent-cyan);
+            line-height: 1;
+        }
+
+        .hero-stat-label {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            margin-top: 0.3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 2rem;
+            background: var(--accent-cyan);
+            color: var(--bg-primary);
+            font-weight: 700;
+            font-size: 1rem;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 25px var(--glow-cyan);
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 50px var(--glow-cyan);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 2rem;
+            background: transparent;
+            color: var(--text-white);
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.15);
+            cursor: pointer;
+        }
+        .btn-secondary:hover {
+            border-color: var(--accent-cyan);
+            color: var(--accent-cyan);
+            background: rgba(0,229,255,0.05);
+        }
+
+        /* ========== SECTION HEADING ========== */
+        .section-label {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--accent-cyan);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .section-desc {
+            font-size: 1.1rem;
+            color: var(--text-dim);
+            max-width: 600px;
+            line-height: 1.7;
+        }
+
+        /* ========== PROBLEM SECTION ========== */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .problem-card {
+            background: rgba(255,71,87,0.04);
+            border: 1px solid rgba(255,71,87,0.15);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        .problem-card:hover {
+            border-color: rgba(255,71,87,0.3);
+            background: rgba(255,71,87,0.07);
+        }
+
+        .problem-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255,71,87,0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .problem-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--accent-red);
+        }
+
+        .problem-card p {
+            font-size: 0.95rem;
+            color: var(--text-dim);
+            line-height: 1.6;
+        }
+
+        /* ========== SOLUTION / SHIFT ========== */
+        .shift-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .shift-col {
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .shift-old {
+            background: rgba(255,71,87,0.04);
+            border: 1px solid rgba(255,71,87,0.12);
+        }
+
+        .shift-new {
+            background: rgba(0,255,136,0.04);
+            border: 1px solid rgba(0,255,136,0.12);
+        }
+
+        .shift-col h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .shift-old h3 { color: var(--accent-red); }
+        .shift-new h3 { color: var(--accent-green); }
+
+        .shift-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            color: var(--text-dim);
+            line-height: 1.5;
+        }
+
+        .shift-item .icon {
+            flex-shrink: 0;
+            margin-top: 2px;
+            font-size: 1rem;
+        }
+
+        .shift-old .icon { color: var(--accent-red); }
+        .shift-new .icon { color: var(--accent-green); }
+
+        /* ========== SERVICES ========== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card:hover {
+            border-color: var(--border-hover);
+            background: var(--bg-card-hover);
+            transform: translateY(-4px);
+        }
+
+        .service-card.featured {
+            border-color: rgba(0,229,255,0.3);
+            background: linear-gradient(135deg, rgba(0,229,255,0.05), rgba(255,215,0,0.03));
+        }
+        .service-card.featured::before {
+            content: 'CORE';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.2rem 0.6rem;
+            background: rgba(0,229,255,0.15);
+            color: var(--accent-cyan);
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            border-radius: 4px;
+        }
+
+        .service-icon {
+            width: 52px;
+            height: 52px;
+            background: rgba(0,229,255,0.08);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-card p {
+            font-size: 0.92rem;
+            color: var(--text-dim);
+            line-height: 1.6;
+        }
+
+        .service-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 1rem;
+        }
+
+        .service-tag {
+            padding: 0.25rem 0.65rem;
+            background: rgba(0,229,255,0.06);
+            border: 1px solid rgba(0,229,255,0.1);
+            border-radius: 6px;
+            font-size: 0.72rem;
+            color: var(--accent-cyan);
+            font-weight: 600;
+        }
+
+        /* ========== HOW IT WORKS ========== */
+        .steps {
+            margin-top: 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            position: relative;
+        }
+
+        .steps::before {
+            content: '';
+            position: absolute;
+            left: 28px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-gold), var(--accent-magenta));
+            opacity: 0.3;
+        }
+
+        .step {
+            display: flex;
+            gap: 2rem;
+            padding: 2rem 0;
+            position: relative;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 56px;
+            height: 56px;
+            background: var(--bg-card);
+            border: 2px solid rgba(0,229,255,0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--accent-cyan);
+            z-index: 1;
+        }
+
+        .step-content h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+        }
+
+        .step-content p {
+            font-size: 0.95rem;
+            color: var(--text-dim);
+            line-height: 1.6;
+        }
+
+        .step-content .step-detail {
+            margin-top: 0.75rem;
+            padding: 0.75rem 1rem;
+            background: rgba(0,229,255,0.04);
+            border-left: 3px solid var(--accent-cyan);
+            border-radius: 0 8px 8px 0;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+        }
+
+        /* ========== RESULTS / CASE STUDIES ========== */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .result-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .result-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-gold));
+        }
+
+        .result-label {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--accent-cyan);
+            margin-bottom: 0.75rem;
+        }
+
+        .result-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .result-metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .metric {
+            text-align: center;
+            padding: 0.75rem;
+            background: rgba(0,229,255,0.04);
+            border-radius: 10px;
+        }
+
+        .metric-value {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--accent-cyan);
+            line-height: 1;
+        }
+
+        .metric-label {
+            font-size: 0.72rem;
+            color: var(--text-dim);
+            margin-top: 0.3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .result-quote {
+            font-style: italic;
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            border-left: 3px solid var(--accent-gold);
+            padding-left: 1rem;
+            line-height: 1.6;
+        }
+
+        .result-author {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            font-style: normal;
+        }
+
+        /* ========== COMPARISON TABLE ========== */
+        .comparison {
+            margin-top: 3rem;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .comparison-row:last-child { border-bottom: none; }
+
+        .comparison-header {
+            background: var(--bg-card);
+        }
+
+        .comparison-cell {
+            padding: 1rem 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .comparison-header .comparison-cell {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .comparison-header .comparison-cell:nth-child(2) {
+            color: var(--accent-red);
+            text-align: center;
+        }
+        .comparison-header .comparison-cell:nth-child(3) {
+            color: var(--accent-green);
+            text-align: center;
+            background: rgba(0,255,136,0.04);
+        }
+
+        .comparison-cell:first-child {
+            color: var(--text-dim);
+            font-weight: 500;
+        }
+
+        .comparison-cell:nth-child(2) {
+            color: var(--text-muted);
+            text-align: center;
+            background: rgba(255,71,87,0.02);
+        }
+
+        .comparison-cell:nth-child(3) {
+            color: var(--text-white);
+            text-align: center;
+            background: rgba(0,255,136,0.03);
+            font-weight: 500;
+        }
+
+        /* ========== CHANNELS ========== */
+        .channels-row {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .channel-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.8rem 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .channel-badge:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-2px);
+        }
+
+        .channel-badge .ch-icon {
+            font-size: 1.3rem;
+        }
+
+        /* ========== CTA SECTION ========== */
+        .cta-section {
+            text-align: center;
+            padding: 6rem 0;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, rgba(0,229,255,0.06), rgba(255,215,0,0.04));
+            border: 1px solid rgba(0,229,255,0.15);
+            border-radius: 24px;
+            padding: 4rem 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 50% 50%, rgba(0,229,255,0.05), transparent 60%);
+            pointer-events: none;
+        }
+
+        .cta-box h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .cta-box p {
+            font-size: 1.1rem;
+            color: var(--text-dim);
+            max-width: 500px;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+
+        .cta-trust {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-trust span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .cta-trust .check { color: var(--accent-green); }
+
+        /* ========== FOOTER ========== */
+        footer {
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        /* ========== DIVIDER ========== */
+        .divider {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-gold));
+            border-radius: 2px;
+            margin: 0.75rem 0 0;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            section { padding: 3.5rem 0; }
+            .container { padding: 0 1.2rem; }
+
+            .shift-grid { grid-template-columns: 1fr; }
+            .comparison-row { grid-template-columns: 1fr; }
+            .comparison-cell:first-child {
+                background: var(--bg-card);
+                font-weight: 700;
+                color: var(--text-white);
+            }
+            .comparison-header { display: none; }
+            .comparison-cell { padding: 0.75rem 1.2rem; }
+            .comparison-cell:nth-child(2)::before { content: 'In-house: '; font-weight: 600; color: var(--accent-red); }
+            .comparison-cell:nth-child(3)::before { content: 'Sky Advising: '; font-weight: 600; color: var(--accent-green); }
+
+            .hero-stats { gap: 1.5rem; }
+            .hero-stat-value { font-size: 1.8rem; }
+
+            .steps::before { left: 18px; }
+            .step { gap: 1.2rem; }
+            .step-number { width: 40px; height: 40px; font-size: 1rem; }
+
+            .cta-box { padding: 3rem 1.5rem; }
+
+            .topbar-cta span { display: none; }
+        }
+
+        @media print {
+            body::before, .bg-canvas, .bg-grid { display: none !important; }
+            body { background: #080b1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .topbar { position: relative !important; padding: 0.5rem 1.5rem !important; }
+            .hero { min-height: auto !important; padding: 1.5rem 0 2rem !important; }
+            .hero h1 { font-size: 2.5rem !important; margin-bottom: 0.75rem !important; }
+            .hero-sub { margin-bottom: 1.5rem !important; }
+            .hero-stats { margin-top: 1.5rem !important; gap: 2rem !important; }
+            section { padding: 1.5rem 0 !important; }
+            .section-title { font-size: 1.8rem !important; margin-bottom: 0.5rem !important; }
+            .reveal { opacity: 1 !important; transform: none !important; }
+            .problem-grid, .services-grid, .results-grid { margin-top: 1.5rem !important; gap: 1rem !important; }
+            .problem-card, .service-card, .result-card { padding: 1.2rem !important; break-inside: avoid; }
+            .shift-grid { margin-top: 1.5rem !important; gap: 1rem !important; }
+            .shift-col { padding: 1.2rem !important; }
+            .shift-item { margin-bottom: 0.5rem !important; }
+            .channels-row { margin-top: 1.5rem !important; }
+            .steps { margin-top: 1.5rem !important; }
+            .step { padding: 1rem 0 !important; }
+            .comparison { margin-top: 1.5rem !important; break-inside: avoid; }
+            .cta-box { padding: 2rem 1.5rem !important; break-inside: avoid; }
+            .cta-section { padding: 2rem 0 !important; }
+            .divider { margin-top: 0.4rem !important; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="bg-canvas">
+    <div class="bg-mesh bg-mesh--1"></div>
+    <div class="bg-mesh bg-mesh--2"></div>
+    <div class="bg-mesh bg-mesh--3"></div>
+</div>
+<div class="bg-grid"></div>
+
+<!-- ========== TOPBAR ========== -->
+<div class="topbar">
+    <a href="#" class="topbar-logo">
+        <div class="topbar-logo-icon">S</div>
+        <div>
+            <div class="topbar-name">Sky Advising</div>
+            <div class="topbar-tag">Web3 Growth Agency</div>
+        </div>
+    </a>
+    <a href="https://t.me/sky_advising" class="topbar-cta" target="_blank" rel="noopener">
+        <span>Let's Talk</span> &rarr;
+    </a>
+</div>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+    <div class="container">
+        <div class="reveal">
+            <div class="hero-badge">BD & Lead Generation for Web3</div>
+        </div>
+        <h1 class="reveal">
+            We Book Meetings.<br>
+            <span class="gradient-text">You Close Deals.</span>
+        </h1>
+        <p class="hero-sub reveal">
+            Outsourced BD that's 10x cheaper and 10x more productive than in-house.
+            50,000+ verified crypto contacts. Telegram, LinkedIn, Email &mdash; fully automated.
+        </p>
+        <div class="hero-ctas reveal">
+            <a href="https://calendly.com/advisingsky/30min" class="btn-primary" target="_blank" rel="noopener">
+                Book a Free Strategy Call &rarr;
+            </a>
+        </div>
+        <div class="hero-stats reveal">
+            <div class="hero-stat">
+                <div class="hero-stat-value">50K+</div>
+                <div class="hero-stat-label">Crypto Contacts</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-value">12%</div>
+                <div class="hero-stat-label">Reply Rate</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-value">3</div>
+                <div class="hero-stat-label">Channels</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-value">48h</div>
+                <div class="hero-stat-label">To First Meetings</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== PROBLEM ========== -->
+<section id="problem">
+    <div class="container">
+        <div class="reveal">
+            <div class="section-label">The Problem</div>
+            <h2 class="section-title">Why In-House BD Doesn't Scale</h2>
+            <div class="divider"></div>
+        </div>
+        <div class="problem-grid">
+            <div class="problem-card reveal">
+                <div class="problem-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff4757" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+                <h3>$2K-$3K/mo Per SDR + Commission</h3>
+                <p>Hiring, training, managing a BD rep takes months. Most don't ramp up for 3-6 months. You're paying salary before seeing a single lead.</p>
+            </div>
+            <div class="problem-card reveal">
+                <div class="problem-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff4757" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="9" y1="10" x2="15" y2="10"/></svg></div>
+                <h3>Generic Messages Get Ignored</h3>
+                <p>Copy-paste templates from your BD land in spam or get blocked. LinkedIn accounts get restricted. Telegram gets flagged. Zero personalization = zero replies.</p>
+            </div>
+            <div class="problem-card reveal">
+                <div class="problem-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff4757" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                <h3>No Time to Build Pipelines</h3>
+                <p>You're busy building product, raising funds, managing community. BD takes dedicated infrastructure &mdash; contact databases, automation tools, warm accounts, sequences.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== THE SHIFT ========== -->
+<section id="shift">
+    <div class="container">
+        <div class="reveal">
+            <div class="section-label">The Shift</div>
+            <h2 class="section-title">Stop Hiring SDRs. Outsource the Pipeline.</h2>
+            <div class="divider"></div>
+        </div>
+        <div class="shift-grid reveal">
+            <div class="shift-col shift-old">
+                <h3><span class="icon">&#10060;</span> In-House BD</h3>
+                <div class="shift-item"><span class="icon">&#10060;</span> $2K-$3K/mo salary + commission + onboarding time</div>
+                <div class="shift-item"><span class="icon">&#10060;</span> Months to build contact database from scratch</div>
+                <div class="shift-item"><span class="icon">&#10060;</span> Manual outreach, 20-30 messages/day per person</div>
+                <div class="shift-item"><span class="icon">&#10060;</span> Accounts get banned from aggressive outreach</div>
+                <div class="shift-item"><span class="icon">&#10060;</span> No analytics, no A/B testing, no optimization</div>
+                <div class="shift-item"><span class="icon">&#10060;</span> Single channel (usually just email or LinkedIn)</div>
+            </div>
+            <div class="shift-col shift-new">
+                <h3><span class="icon">&#10004;</span> Sky Advising</h3>
+                <div class="shift-item"><span class="icon">&#10004;</span> Fraction of the cost, results from week 1</div>
+                <div class="shift-item"><span class="icon">&#10004;</span> 50K+ verified crypto contacts ready to go</div>
+                <div class="shift-item"><span class="icon">&#10004;</span> Automated outreach, 200+ personalized messages/day</div>
+                <div class="shift-item"><span class="icon">&#10004;</span> Warmed accounts with anti-detection systems</div>
+                <div class="shift-item"><span class="icon">&#10004;</span> Real-time analytics, A/B tested sequences</div>
+                <div class="shift-item"><span class="icon">&#10004;</span> Telegram + LinkedIn + Email &mdash; multichannel</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== CHANNELS ========== -->
+<section id="channels">
+    <div class="container" style="text-align: center;">
+        <div class="reveal">
+            <div class="section-label">Outreach Channels</div>
+            <h2 class="section-title">We Reach Your Prospects Where They Are</h2>
+            <div class="divider" style="margin: 0.75rem auto 0;"></div>
+        </div>
+        <div class="channels-row reveal">
+            <div class="channel-badge">
+                <svg class="ch-icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                Telegram
+            </div>
+            <div class="channel-badge">
+                <svg class="ch-icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+            </div>
+            <div class="channel-badge">
+                <svg class="ch-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                Email
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== SERVICES ========== -->
+<section id="services">
+    <div class="container">
+        <div class="reveal">
+            <div class="section-label">Services</div>
+            <h2 class="section-title">What We Deliver</h2>
+            <div class="divider"></div>
+        </div>
+        <div class="services-grid">
+            <div class="service-card featured reveal">
+                <div class="service-icon">&#127919;</div>
+                <h3>BD & Lead Generation</h3>
+                <p>Targeted outreach to decision-makers at crypto projects, exchanges, VCs, and Web3 companies. We find the right contacts, write the sequences, and book the meetings.</p>
+                <div class="service-tags">
+                    <span class="service-tag">ICP Research</span>
+                    <span class="service-tag">Contact Sourcing</span>
+                    <span class="service-tag">Sequence Writing</span>
+                    <span class="service-tag">Meeting Booking</span>
+                </div>
+            </div>
+            <div class="service-card featured reveal">
+                <div class="service-icon">&#9889;</div>
+                <h3>Outreach Automation Platform</h3>
+                <p>Our proprietary platform handles multichannel sequences with anti-detection, account warmup, daily limits, and smart follow-ups. No manual work required.</p>
+                <div class="service-tags">
+                    <span class="service-tag">Anti-Detection</span>
+                    <span class="service-tag">Account Warmup</span>
+                    <span class="service-tag">A/B Testing</span>
+                    <span class="service-tag">Smart Follow-ups</span>
+                </div>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">&#129302;</div>
+                <h3>AI Content & Social</h3>
+                <p>AI-powered content creation for social presence. AI ambassador accounts generating 200K-750K views per video. Trendwatching + content + posting &mdash; fully managed.</p>
+                <div class="service-tags">
+                    <span class="service-tag">AI Influencers</span>
+                    <span class="service-tag">Content Strategy</span>
+                    <span class="service-tag">Social Automation</span>
+                </div>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">&#128202;</div>
+                <h3>Web3 Advisory</h3>
+                <p>Full-cycle support from concept to post-launch. Tokenomics design, fundraising introductions, exchange listings, and market making connections.</p>
+                <div class="service-tags">
+                    <span class="service-tag">Tokenomics</span>
+                    <span class="service-tag">Fundraising</span>
+                    <span class="service-tag">Listings</span>
+                    <span class="service-tag">Market Making</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== HOW IT WORKS ========== -->
+<section id="how-it-works">
+    <div class="container">
+        <div class="reveal">
+            <div class="section-label">Process</div>
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-desc">From onboarding to booked meetings in under a week.</p>
+            <div class="divider"></div>
+        </div>
+        <div class="steps">
+            <div class="step reveal">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Strategy Call (30 min)</h3>
+                    <p>We map your ICP, understand your product positioning, and identify the highest-value targets for outreach.</p>
+                    <div class="step-detail">Free consultation. We build you a custom outreach plan &mdash; no strings attached.</div>
+                </div>
+            </div>
+            <div class="step reveal">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Contact List & Sequences</h3>
+                    <p>We pull targeted contacts from our 50K+ database, segment by relevance, and craft personalized multichannel sequences.</p>
+                    <div class="step-detail">Each message is tailored to the recipient's role, company, and current activity.</div>
+                </div>
+            </div>
+            <div class="step reveal">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Launch Campaigns</h3>
+                    <p>Automated outreach starts across Telegram, LinkedIn, and Email simultaneously. Warmed accounts, daily limits, anti-detection &mdash; all handled.</p>
+                    <div class="step-detail">200+ personalized messages per day across all channels.</div>
+                </div>
+            </div>
+            <div class="step reveal">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Meetings Booked</h3>
+                    <p>Interested prospects are routed directly to your calendar. We handle the follow-ups, you handle the closing.</p>
+                    <div class="step-detail">Real-time dashboard with reply rates, engagement metrics, and pipeline visibility.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== RESULTS ========== -->
+<section id="results">
+    <div class="container">
+        <div class="reveal">
+            <div class="section-label">Results</div>
+            <h2 class="section-title">What Our Clients Achieve</h2>
+            <p class="section-desc">Anonymized results from recent campaigns.</p>
+            <div class="divider"></div>
+        </div>
+        <div class="results-grid">
+            <div class="result-card reveal">
+                <div class="result-label">DeFi Protocol &mdash; Series A</div>
+                <h3>Fundraising Outreach</h3>
+                <div class="result-metrics">
+                    <div class="metric">
+                        <div class="metric-value">47</div>
+                        <div class="metric-label">Meetings Booked</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">14%</div>
+                        <div class="metric-label">Reply Rate</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">$2.4M</div>
+                        <div class="metric-label">Pipeline Value</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">6 wks</div>
+                        <div class="metric-label">Campaign Duration</div>
+                    </div>
+                </div>
+                <div class="result-quote">
+                    "They booked more VC meetings in 6 weeks than our BD team did in 6 months. The contact database alone was worth it."
+                    <div class="result-author">&mdash; Co-Founder, DeFi Protocol</div>
+                </div>
+            </div>
+
+            <div class="result-card reveal">
+                <div class="result-label">Infrastructure Project &mdash; B2B Sales</div>
+                <h3>Partnership Outreach</h3>
+                <div class="result-metrics">
+                    <div class="metric">
+                        <div class="metric-value">32</div>
+                        <div class="metric-label">Qualified Leads</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">11%</div>
+                        <div class="metric-label">Reply Rate</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">3x</div>
+                        <div class="metric-label">vs Previous BD</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">4 wks</div>
+                        <div class="metric-label">Time to First Deal</div>
+                    </div>
+                </div>
+                <div class="result-quote">
+                    "We were paying $3K/mo salary to a BD who sent 20 messages a day. Sky Advising does 200+ and actually gets replies."
+                    <div class="result-author">&mdash; CEO, Web3 Infrastructure</div>
+                </div>
+            </div>
+
+            <div class="result-card reveal">
+                <div class="result-label">Legal Advisory &mdash; Company Formation & Licensing</div>
+                <h3>Client Acquisition for Legal Services</h3>
+                <div class="result-metrics">
+                    <div class="metric">
+                        <div class="metric-value">20+</div>
+                        <div class="metric-label">Replies Per Day</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">22%</div>
+                        <div class="metric-label">Reply Rate</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">140+</div>
+                        <div class="metric-label">Qualified Leads / Week</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">3 wks</div>
+                        <div class="metric-label">To Full Pipeline</div>
+                    </div>
+                </div>
+                <div class="result-quote">
+                    "We needed founders who are actively looking for company incorporation and licensing. Sky Advising dialed in the targeting so precisely that we were drowning in replies from day one."
+                    <div class="result-author">&mdash; Managing Partner, Legal Advisory Firm</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== COMPARISON TABLE ========== -->
+<section id="compare">
+    <div class="container">
+        <div class="reveal" style="text-align: center;">
+            <div class="section-label">Comparison</div>
+            <h2 class="section-title">In-House BD vs Sky Advising</h2>
+            <div class="divider" style="margin: 0.75rem auto 0;"></div>
+        </div>
+        <div class="comparison reveal">
+            <div class="comparison-row comparison-header">
+                <div class="comparison-cell"></div>
+                <div class="comparison-cell">In-House BD</div>
+                <div class="comparison-cell">Sky Advising</div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-cell">Monthly cost</div>
+                <div class="comparison-cell">$2,000 - $3,000 + commission</div>
+                <div class="comparison-cell">From $1,500</div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-cell">Time to first results</div>
+                <div class="comparison-cell">3-6 months</div>
+                <div class="comparison-cell">1 week</div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-cell">Messages per day</div>
+                <div class="comparison-cell">20-30 manual</div>
+                <div class="comparison-cell">200+ automated</div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-cell">Contact database</div>
+                <div class="comparison-cell">Built from scratch</div>
+                <div class="comparison-cell">50K+ verified crypto contacts</div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-cell">Channels</div>
+                <div class="comparison-cell">Usually 1 (email or LinkedIn)</div>
+                <div class="comparison-cell">Telegram + LinkedIn + Email</div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-cell">Account safety</div>
+                <div class="comparison-cell">Frequent bans</div>
+                <div class="comparison-cell">Anti-detection + warmup</div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-cell">Follow-ups</div>
+                <div class="comparison-cell">Mostly forgotten</div>
+                <div class="comparison-cell">Automated multi-step sequences</div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-cell">Analytics</div>
+                <div class="comparison-cell">Spreadsheets</div>
+                <div class="comparison-cell">Real-time dashboard</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== CTA ========== -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-box reveal">
+            <h2>Ready to Fill Your Pipeline?</h2>
+            <p>Book a free 30-minute strategy call. We'll map your ICP, show you relevant contacts from our database, and build a custom outreach plan.</p>
+            <a href="https://calendly.com/advisingsky/30min" class="btn-primary" target="_blank" rel="noopener">
+                Book a Free Call &rarr;
+            </a>
+            <div class="cta-trust">
+                <span><span class="check">&#10003;</span> Free strategy session</span>
+                <span><span class="check">&#10003;</span> No commitment</span>
+                <span><span class="check">&#10003;</span> Custom plan included</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+    <div class="container">
+        &copy; 2026 Sky Advising &mdash; Web3 Growth Agency
+    </div>
+</footer>
+
+<script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
